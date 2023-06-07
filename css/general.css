@@ -1,0 +1,33 @@
+/*
+/* general.css
+*/
+
+@charset "utf-8";
+
+/* font-color */
+.c-white {
+  color: rgb(255, 255, 255) !important;
+}
+
+.c-yellow {
+  color: #FFCA00 !important;
+}
+
+/* background-color */
+.bg-white {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.bg-yellow {
+  background-color: #FFCA00 !important;
+}
+
+/* border-color */
+.bd-yellow {
+  border-color: #FFCA00 !important;
+}
+
+/* display */
+.display-none {
+  display: none !important;
+}

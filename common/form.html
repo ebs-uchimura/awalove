@@ -1,0 +1,326 @@
+<section id="order" class="order">
+  <div class="order-base">
+    <h2><b>いますぐ注文できます</b></h2>
+    <div class="order-header">以下の内容をご入力ください</div>
+    <form id="orderform" method="post">
+      <fieldset>
+        <legend>●&nbsp;お客様情報</legend>
+        <div>
+          <label for="shopname">店名</label><br>
+          <input type="text" name="shopname" id="shopname" class="wide" value="" placeholder="お届け先の店名を入れてください" />
+        </div>
+        <br />
+        <div>
+          <label for="username">担当者のお名前</label><br />
+          <input type="text" name="username" id="username" class="wide" value="" placeholder="お名前を入れてください" />
+        </div>
+        <br />
+        <div>
+          <label for="tel">お電話（携帯／固定電話）</label><br />
+          <input type="text" name="tel" id="tel" class="wide" value="" placeholder="ご連絡しやすい電話番号" />
+        </div>
+        <br />
+        <div>
+          <label for="email">E-mail</label><br />
+          <input type="text" name="email" id="email" class="wide" value="" placeholder="メールアドレス" />
+        </div>
+        <br />
+      </fieldset><br />
+      <fieldset>
+        <legend>●&nbsp;お届け先について</legend>
+        <div>
+          <input type="hidden" size="9" id="zip" class="standard" name="zipnumber" />
+          <label for="zipcode">郵便番号</label><br />
+          <input type="text" id="zipcode" class="narrow" name="zip1" />&ensp;-&ensp;
+          <input type="text" class="narrow" name="zip2" />&ensp;
+          <button id="adsearch" class="button-g button-6" type="button"
+            onclick='zipToAddress("[name=zip1]", "[name=zip2]", "#pref", "#city", "#street", zipFunc)'>
+            住所検索
+          </button><br /><br />
+          <label for="pref">都道府県</label><br />
+          <select name="pref" id="pref" class="basic standard">
+            <option value="" selected>都道府県</option>
+            <option value="1">北海道</option>
+            <option value="2">青森県</option>
+            <option value="3">岩手県</option>
+            <option value="4">宮城県</option>
+            <option value="5">秋田県</option>
+            <option value="6">山形県</option>
+            <option value="7">福島県</option>
+            <option value="8">茨城県</option>
+            <option value="9">栃木県</option>
+            <option value="10">群馬県</option>
+            <option value="11">埼玉県</option>
+            <option value="12">千葉県</option>
+            <option value="13">東京都</option>
+            <option value="14">神奈川県</option>
+            <option value="15">新潟県</option>
+            <option value="16">富山県</option>
+            <option value="17">石川県</option>
+            <option value="18">福井県</option>
+            <option value="19">山梨県</option>
+            <option value="20">長野県</option>
+            <option value="21">岐阜県</option>
+            <option value="22">静岡県</option>
+            <option value="23">愛知県</option>
+            <option value="24">三重県</option>
+            <option value="25">滋賀県</option>
+            <option value="26">京都府</option>
+            <option value="27">大阪府</option>
+            <option value="28">兵庫県</option>
+            <option value="29">奈良県</option>
+            <option value="30">和歌山県</option>
+            <option value="31">鳥取県</option>
+            <option value="32">島根県</option>
+            <option value="33">岡山県</option>
+            <option value="34">広島県</option>
+            <option value="35">山口県</option>
+            <option value="36">徳島県</option>
+            <option value="37">香川県</option>
+            <option value="38">愛媛県</option>
+            <option value="39">高知県</option>
+            <option value="40">福岡県</option>
+            <option value="41">佐賀県</option>
+            <option value="42">長崎県</option>
+            <option value="43">熊本県</option>
+            <option value="44">大分県</option>
+            <option value="45">宮崎県</option>
+            <option value="46">鹿児島県</option>
+            <option value="47">沖縄県</option>
+          </select><br /><br />
+          <label for="city">市区町村(例:&thinsp;品川区) </label><br />
+          <input type="text" name="city" id="city" class="wide" /><br /><br />
+          <label for="street">番地以降(例:&thinsp;東大井1-1) </label><br />
+          <input type="text" name="street" id="street" class="wide" />
+        </div>
+        <br />
+      </fieldset>
+      <fieldset class="labelfield">
+        <legend>●&nbsp;ラベルに入れる文字・内容</legend>
+        <div>
+          <input type="text" name="label_text" id="label_text" class="wide" value=""
+            placeholder="希望する文字を入れてください" />
+          <div class="chkbox">
+            <input type="checkbox" id="horns" name="horns">
+            <label for="horns">お店のロゴも使う（担当より詳細をお聞きします）</label>
+          </div>
+        </div>
+        <br />
+        <legend>●&nbsp;ラベルデザインについて</legend>
+        <div class="labeldesign centerul">
+          <div class="chkbox">
+            <input type="checkbox" id="original" name="original">
+            <label for="original">オリジナルデザインを作りたい<br>（担当より詳細をお聞きします）</label>
+          </div>
+        </div>
+        <div class="labelarea">
+          <h3>パターンから選ぶ</h3>
+          <label class="genre classic-label">▽【クラシック】デザインパターン</label><br>
+          <div class="classic">
+            <div id="label2">
+              <input type="radio" name="imgSelect" value="2" id="2" checked />
+              <label for="2"><br>2</label>
+            </div>
+            <div id="label3">
+              <input type="radio" name="imgSelect" value="3" id="3" />
+              <label for="3"><br>3</label>
+            </div>
+            <div id="label4">
+              <input type="radio" name="imgSelect" value="4" id="4" />
+              <label for="4"><br>4</label>
+            </div>
+            <div id="label5">
+              <input type="radio" name="imgSelect" value="5" id="5" />
+              <label for="5"><br>5</label>
+            </div>
+            <div id="label6">
+              <input type="radio" name="imgSelect" value="6" id="6" />
+              <label for="6"><br>6</label>
+            </div>
+            <div id="label7">
+              <input type="radio" name="imgSelect" value="7" id="7" />
+              <label for="7"><br>7</label>
+            </div>
+            <div id="label8">
+              <input type="radio" name="imgSelect" value="8" id="8" />
+              <label for="8"><br>8</label>
+            </div>
+          </div><br>
+          <label class="genre cute-label">▽【キュートな】デザインパターン</label><br>
+          <div class="cute">
+            <div id="label9">
+              <input type="radio" name="imgSelect" value="9" id="9" />
+            <label for="9"><br>9</label>
+            </div>
+            <div id="label10">
+              <input type="radio" name="imgSelect" value="10" id="10" />
+            <label for="10"><br>10</label>
+            </div>
+            <div id="label11">
+              <input type="radio" name="imgSelect" value="11" id="11" />
+              <label for="11"><br>11</label>
+            </div>
+            <div id="label12">
+              <input type="radio" name="imgSelect" value="12" id="12" />
+              <label for="12"><br>12</label>
+            </div>
+            <div id="label13">
+              <input type="radio" name="imgSelect" value="13" id="13" />
+              <label for="13"><br>13</label>
+            </div>
+          </div><br>
+          <label class="genre elegant-label">▽【エレガント】デザインパターン</label><br>
+          <div class="elegant">
+            <div id="label17">
+              <input type="radio" name="imgSelect" value="17" id="17" />
+              <label for="17"><br>17</label>
+            </div>
+            <div id="label18">
+              <input type="radio" name="imgSelect" value="18" id="18" />
+              <label for="18"><br>18</label>
+            </div>
+            <div id="label19">
+              <input type="radio" name="imgSelect" value="19" id="19" />
+              <label for="19"><br>19</label>
+            </div>
+            <div id="label20">
+              <input type="radio" name="imgSelect" value="20" id="20" />
+              <label for="20"><br>20</label>
+            </div>
+            <div id="label21">
+              <input type="radio" name="imgSelect" value="21" id="21" />
+              <label for="21"><br>21</label>
+            </div>
+            <div id="label22">
+              <input type="radio" name="imgSelect" value="22" id="22" />
+              <label for="22"><br>22</label>
+            </div>
+            <div id="label23">
+              <input type="radio" name="imgSelect" value="23" id="23" />
+              <label for="23"><br>23</label>
+            </div>
+            <div id="label25">
+              <input type="radio" name="imgSelect" value="25" id="25" />
+              <label for="25"><br>25</label>
+            </div>
+            <div id="label26">
+              <input type="radio" name="imgSelect" value="26" id="26" />
+              <label for="26"><br>26</label>
+            </div>
+          </div><br>
+          <label class="genre night-label">▽【ナイト】デザインパターン</label><br>
+          <div class="night">
+            <div id="label27">
+              <input type="radio" name="imgSelect" value="27" id="27" />
+              <label for="27"><br>27</label>
+            </div>
+            <div id="label28">
+              <input type="radio" name="imgSelect" value="28" id="28" />
+              <label for="28"><br>28</label>
+            </div>
+            <div id="label29">
+              <input type="radio" name="imgSelect" value="29" id="29" />
+              <label for="29"><br>29</label>
+            </div>
+            <div id="label30">
+              <input type="radio" name="imgSelect" value="30" id="30" />
+              <label for="30"><br>30</label>
+            </div>
+            <div id="label32">
+              <input type="radio" name="imgSelect" value="32" id="32" />
+              <label for="32"><br>32</label>
+            </div>
+            <div id="label34">
+              <input type="radio" name="imgSelect" value="34" id="34" />
+              <label for="34"><br>34</label>
+            </div>
+            <div id="label35">
+              <input type="radio" name="imgSelect" value="35" id="35" />
+              <label for="35"><br>35</label>
+            </div>
+          </div><br>
+          <div class="annotation">
+            ※ラベル内の文字は仮のものです。<br>
+            ※ロゴはサンプルとなります。ご了承ください。
+          </div>
+        </div>
+        <br />
+        <label>文字入れ後のデザインの確認方法</label>
+        <div class="contact-method centerul">
+          <ul>
+            <li>
+              <input type="radio" class="radio01" name="contact" value="1" id="ct1" checked />
+              <label for="ct1">E-mailで確認</label>
+            </li>
+            <li>
+              <input type="radio" class="radio01" name="contact" value="2" id="ct2" />
+              <label for="ct2">電話（午前中）に確認</label>
+            </li>
+            <li>
+              <input type="radio" class="radio01" name="contact" value="3" id="ct3" />
+              <label for="ct3">電話（12時～14時）に確認</label>
+            </li>
+            <li>
+              <input type="radio" class="radio01" name="contact" value="4" id="ct4" />
+              <label for="ct4">電話（14時～16時）に確認</label>
+            </li>
+            <li>
+              <input type="radio" class="radio01" name="contact" value="5" id="ct5" />
+              <label for="ct5">電話（16時～18時）に確認</label>
+            </li>
+            <li>
+              <input type="radio" class="radio01" name="contact" value="6" id="ct6" />
+              <label for="ct6">電話（18時～20時）に確認</label>
+            </li>
+          </ul>
+        </div>
+        <br />
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>●&nbsp;何本ご希望ですか？</legend>
+        <label>※限定価格は初回のみです。</label>
+        <div class="product centerul">
+          <ul>
+            <li>
+              「ヴァン・ムスー・ブリュット ソレイユ」
+            </li>
+            <li>
+              <input type="radio" class="radio01" name="product" id="first3" value="1" checked />
+              <label for="first3">&ensp;体験3本×1セット<small>※初回限定価格</small><br>
+                …<span class="red">¥3,530(税込・送料込)</span>
+              </label>
+            </li>
+            <li> 
+              <input type="radio" class="radio01" name="product" id="first6" value="2" />
+              <label for="first6">&ensp;体験3本×2セット<small>※初回限定価格</small><br>
+                …<span class="red">¥6,510(税込・送料込)</span>
+              </label>
+            </li>
+            <li>
+              <input type="radio" class="radio01" name="product" id="first9" value="3" />
+              <label for="first9">体験3本×3セット<small>※初回限定価格</small><br>
+                …<span class="red">¥9,490(税込・送料込)</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <label>決済方法</label>
+        <div class="payment centerul">
+          クレジット決済／代金引換（代引手数料無料）<br>
+          <small>※「この内容で注文する」の後に選択肢が表示されます</small>
+        </div>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>●&nbsp;その他連絡事項</legend>
+        <div>
+          <textarea name="comment" id="comment" class="wide high" placeholder="連絡事項を入れてください"></textarea><br />
+        </div>
+      </fieldset>
+      <div class="submit">
+        <span id="submit"><img src="./img/order_button.png" alt="注文する"></span>
+      </div>
+    </form>
+  </div>
+</section>

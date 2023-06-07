@@ -1,0 +1,140 @@
+/*
+/* button.css
+*/
+
+@charset "utf-8";
+
+/* for PC */
+@media (min-width: 429px) {
+
+  /* text form */
+  .standard {
+    height: 30px;
+  }
+
+  .high {
+    height: 80px;
+  }
+
+  /* size */
+  .narrow {
+    width: 100px;
+  }
+
+  .wide {
+    width: 80%;
+  }
+}
+
+/* for SP */
+@media (max-width: 428px) {
+
+  /* text form */
+  .standard {
+    height: 30px;
+  }
+
+  .high {
+    height: 20vw;
+  }
+
+  /* size */
+  .narrow {
+    width: 20%;
+  }
+
+  .wide {
+    width: 100%;
+  }
+}
+
+/* basic button */
+.button-g {
+  width: auto;
+  min-height: 2rem;
+  margin: 0;
+  padding: calc(.475rem - 1px) calc(1.5rem - 1px);
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  justify-content: center;
+  position: relative;
+  transition: all 250ms;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-g:hover,
+.button-g:focus {
+  color: rgba(0, 0, 0, 0.65);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-g:hover {
+  transform: translateY(-1px);
+}
+
+.button-g:active {
+  transform: translateY(0);
+  color: rgba(0, 0, 0, 0.65);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+}
+
+/* white buttons */
+.button-6 {
+  background-color: #FFFFFF;
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+}
+
+/* yellow buttons */
+.button-4 {
+  background-color: #F6CA00;
+}
+
+.button-4:active {
+  background-color: #F6CA00;
+}
+
+/* red buttons */
+.button-2 {
+  background-color: #CDCDD2;
+}
+
+.button-2:active {
+  background-color: #CDCDD2;
+}
+
+/* back buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* submit button */
+.buttons #submit {
+  margin-right: 10px;
+  justify-content: end;
+}
+
+/* reset button */
+.buttons #clear {
+  margin-left: 10px;
+  justify-content: start;
+}
